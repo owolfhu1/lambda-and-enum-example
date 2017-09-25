@@ -62,7 +62,7 @@ public class MicrowaveUser {
             System.out.println("food.toString(): " + food.toString());
 
             //load it
-            microwave.load.act(food);
+            microwave.load.put(food);
 
             //reset tempInput
             tempInput = -1;
