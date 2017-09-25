@@ -33,10 +33,10 @@ public class MicrowaveUser {
         Microwave microwave = new Microwave();
 
         //turn it on
-        microwave.power.act();
+        microwave.power.press();
 
         //while the microwave is on we can use it
-        while (microwave.isOn.act()) {
+        while (microwave.isOn.check()) {
 
             int tempInput = -1;
             System.out.println(MENU);
@@ -88,7 +88,7 @@ public class MicrowaveUser {
             microwave.cook.act(tempInput);
 
             //unload the food
-            food = microwave.unload.act();
+            food = microwave.unload.take();
 
             //display the food
             System.out.println("food.toString(): " + food.toString());
@@ -97,7 +97,7 @@ public class MicrowaveUser {
             System.out.print("Enter x to turn the microwave off, any other key to cook something else: ");
             String selection = input.next();
             if (selection.toLowerCase().charAt(0) == 'x')
-                microwave.power.act();
+                microwave.power.press();
 
         }
 
