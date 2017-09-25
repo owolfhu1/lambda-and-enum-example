@@ -55,20 +55,20 @@ interface OneIntVoid {
 
 @FunctionalInterface
 interface NoArgBoolean {
-    boolean act();
+    boolean check();
 }
 
 @FunctionalInterface
 interface OneFoodVoid {
-    void act(Food food);
+    void put(Food food);
 }
 
 @FunctionalInterface
 interface NoArgFood {
-    Food act();
+    Food take();
 }
 
 @FunctionalInterface
 interface NoArgVoid {
-    void act();
+    void press();
 }
