@@ -10,9 +10,18 @@ import java.util.Scanner;
 public class MicrowaveUser {
 
     //an array of food types for making food
-    public static final FoodType[] FOODS = {
+    private static final FoodType[] FOODS = {
             FoodType.PIZZA, FoodType.SOUP, FoodType.MUFFIN, FoodType.POPCORN, FoodType.HOT_POCKET
     };
+
+    //menu to display when selecting food
+    private static final String MENU = "Please select a food:\n" +
+            "1) PIZZA: comes FROZEN, takes 12 seconds to cook through one state.\n" +
+            "2) SOUP: comes THAWED, takes 8 seconds to cook through one state.\n" +
+            "3) MUFFIN: comes THAWED, takes 2 seconds to cook through one state.\n" +
+            "4) POPCORN: comes THAWED, takes 15 seconds to cook through one state.\n" +
+            "5) HOT POCKET: comes FROZEN, takes 7 seconds to cook through one state.\n" +
+            "Please enter selection: ";
 
     //main method
     public static void main(String... args) throws InterruptedException {
@@ -30,15 +39,7 @@ public class MicrowaveUser {
         while (microwave.isOn.act()) {
 
             int tempInput = -1;
-            System.out.println(
-                    "Please select a food:\n" +
-                            "1) PIZZA: comes FROZEN, takes 12 seconds to cook through one state.\n" +
-                            "2) SOUP: comes THAWED, takes 8 seconds to cook through one state.\n" +
-                            "3) MUFFIN: comes THAWED, takes 2 seconds to cook through one state.\n" +
-                            "4) POPCORN: comes THAWED, takes 15 seconds to cook through one state.\n" +
-                            "5) HOT POCKET: comes FROZEN, takes 7 seconds to cook through one state.\n" +
-                            "Please enter selection: "
-            );
+            System.out.println(MENU);
 
             //while input is out of range
             while (tempInput < 1 || tempInput > 5) {
